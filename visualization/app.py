@@ -123,6 +123,36 @@ def pie_production(level):
 
     return fig
 
+movies = pd.read_csv('../final_data.csv')
+
+def wordclud_plot(num_movies):
+    best_scores = movies.sort_values(by='IMDB Score', ascending=False).iloc[:num_movies]
+    best_scores = best_scores['overview'].reset_index(drop=True)
+    fig, axes = plt.subplots(4, 4, figsize=(16, 12))
+
+    for i in range(4):
+        for j in range(4):
+            text = best_scores[4*i + j]
+            wordcloud = WordCloud(max_font_size=60, background_color='white').generate(text)
+            axes[i][j].imshow(wordcloud, interpolation='bilinear')
+            axes[i][j].axis("off")
+
+    return fig
+
+
+res = pd.read_csv('res.csv')
+
+def generate_table(dataframe, max_rows=10):
+    return html.Table([
+        html.Thead(
+            html.Tr([html.Th(col) for col in dataframe.columns])
+        ),
+        html.Tbody([
+            html.Tr([
+                html.Td(dataframe.iloc[i][col]) for col in dataframe.columns
+            ]) for i in range(min(len(dataframe), max_rows))
+        ])
+    ])
 
 app.layout = html.Div([
         html.H1("exam app"),
@@ -138,6 +168,12 @@ app.layout = html.Div([
         dcc.Slider(id='pie_plot', min=10, max=10000, step=1, value=1000,),
         html.Div([html.Div(dcc.Graph(id = "figure_pie"))], className = "row"),
 
+        #dcc.Slider(id='word_plot', min=10, max=10000, step=1, value=16,),
+        #html.Div([html.Div(dcc.Graph(id = "figure_word"))], className = "row"),
+
+
+        html.H3("Here are the results imdb score prediction  of ridge regression on the prerocessed data for different alphas"),
+        generate_table(res),
 
 
         ], className = "container")
@@ -162,6 +198,14 @@ def update_graph(value):
         )
 def update_graph(value):
     return pie_production(value)
+
+
+#@app.callback(
+#        Output(component_id = "figure_word", component_property = "figure"),
+#        [Input(component_id = "word_plot", component_property = "value")]
+#        )
+#def update_graph(value):
+#    return wordclud_plot(value)
 
 
 if __name__ == "__main__":
