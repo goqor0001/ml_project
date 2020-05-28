@@ -4,7 +4,7 @@
 
 
 %Information to be included in the title page:
-\title{Movie Dataset Visualization}
+\title{Movie Dataset Visualization and IMDB Score Prediction}
 %\author{Grigor Keropyan}
 %\institute{Yerevan State University}
 %\date{29/05/2020}
@@ -45,7 +45,7 @@ https://www.kaggle.com/rounakbanik/the-movies-dataset
 \begin{frame}
 \frametitle{Problem Definition}
 
-Explore Movies dataset. Using data visualization techniques detect some dependencies between dataset features. Particularly, how popular is the movie depend on the what is the original language of it.
+Explore Movies dataset. Using data visualization techniques detect some dependencies between dataset features. Particularly, how popular is the movie depend on the what is the original language of it. Finally business probelm is to predict a IMDB score of the movies based on the information available prior to the theatrical release. 
 
 \end{frame}
 
@@ -132,6 +132,19 @@ Armenian?
 \end{frame}
 
 \begin{frame}
+
+\frametitle{Ridge regression on IMDB score prediction}
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{res}
+	\caption{Ridge regression result on different alphas}
+	\label{fig:res}
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Conclusion from the plots}
 
 1. From the pie and bar plots we evidently understand that the most popular and movies come from the US. More than half of the movies are produced in United State Of America and most popular movies original language is in English. 
@@ -148,6 +161,13 @@ have a Drama genre.
 \frametitle{Conclusion from the plots}
 
 3. Finally from the line graph we might be able to conclude that runtime of movies is connected with their popularity in some cases. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusion from the regression}
+
+Ridge regression performed well on the dataset and this result could be used for new movies IMDB score prediction
+
 \end{frame}
 
 \begin{frame}
