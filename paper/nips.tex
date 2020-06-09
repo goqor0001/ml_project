@@ -61,17 +61,33 @@ Although, it seems impossible to predict the movie rating based on the informati
 One of the goals of this work is provide a tool which can help producers to promote their films to be successful. Another one is that this work provide a good recommendation for people predicting their IMDB score. 
 
 \section{Related Work}
-\label{gen_inst}
+\label{rel_work}
 
-This work is based on the Stanford students paper [1] where they predict IMDB score of movies. In [1] authors used ML based methods to predict IMDB score. Another research wi
+This work is based on the Stanford students paper [1] where they predict IMDB score of movies. In [1] authors used ML based methods to predict IMDB score. Another research which uses Bayesian approach [2]. This paper is based on [1] and uses new ML algorithms such as lightgbm to reach the better accuracy than [1]. Our preproccessing is almost the same as [1] and we have about 20K examples. We have shuffled the dataset and splited into training and test test correspondingly 80 and 20 precents. In the algorithm we have done K-Folds cross validation and after tuning the hyperparamters we have achieved better accuracy than [1]. 
 
 \section{Dataset and Features}
 \label{headings}
 
-All headings should be lower case (except for first word and proper nouns),
-flush left, and bold.
+We have used open source data, "Movie Genre from its Poster Dataset" [3] and "The Movie Dataset" [4]. The dataset is preprocessed like [1], taking only movies which original language is english and which produced after 1980. The features are divided into 3 groups: text (synopses), images (posters) and others (runtime, genre, director, actors). From poster we have extracted some features: such as number of peoples in the poster, mean and standard deviation of blue, green, red, hue, saturation, brightness as in [5]. For summaries we have used count vectorizers and only left the word which appeared more than 20 times. Directors are have been made one hot and actors count vectorizers where we have only left top three actors in each movie. The example of result is shown in Table 1. 
 
-First-level headings should be in 12-point type.
+\begin{table}
+  \caption{Dataset by Groups}
+  \label{dataset-table}
+  \centering
+  \begin{tabular}{llll}
+    \toprule
+    Data & Type & Dimension & Example  \\
+    \midrule
+    Actors & Categorical  & 1671 &  Tom Hanks   \\
+    poster & Numerical & 13 & Number of faces = 0 \\
+    Director & Categorical & 491 & Howard Deutch \\
+    Runtime & Numerical & 1 & 121 (minutes) \\
+    Genre & Categorical & 23 & Documentation \\
+    Synopses & Categorical & 3712 & Once \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+After filtering the english movies and released after 1980 it remained 18850 movies. Which we have splited in two ways. First: like [1] implementation, when it is separated train, validation and test sets correspondingly 70, 15, 15 percents. Second: which gave a better result it is separated into train and test sets correspondingly 80 and 20 percents. 
 
 \section{Methods}
 \label{others}
@@ -259,22 +275,18 @@ submission, only in the final paper.
 \section*{References}
 \label{reference}
 
-References follow the acknowledgments. Use unnumbered first-level heading for
-the references. Any choice of citation style is acceptable as long as you are
-consistent. It is permissible to reduce the font size to \verb+small+ (9 point)
-when listing the references. {\bf Remember that you can use more than eight
-  pages as long as the additional pages contain \emph{only} cited references.}
-\medskip
-
 \small
 
-[1] Yichen Yang et al., Predicting Movie Ratings with Multimodal Data.
+[1] Yichen Yang et al., {\it "Predicting Movie Ratings with Multimodal Data"},
+\url{http://cs229.stanford.edu/proj2019aut/data/assignment_308832_raw/26260680.pdf}.
 
-[2] A. Oghina, M. Breuss, M. Tsagkias, and M. De Rijke, {\it “Predicting imdb movie ratings using social media}  New York:
-TELOS/Springer--Verlag.
+[2] Y. J. Lim and Y. W. Teh, {\it "Variational bayesian approach to movie rating prediction"}  Proceedings of KDD Cup and Workshop, vol. 7, 2007, pp. 15–21.
 
-[3] Hasselmo, M.E., Schnell, E.\ \& Barkai, E.\ (1995) Dynamics of learning and
-recall at excitatory recurrent synapses and cholinergic modulation in rat
-hippocampal region CA3. {\it Journal of Neuroscience} {\bf 15}(7):5249-5262.
+[3] KaggleInc, {\it “Movie genre from its poster,”} 
+\url{https://www.kaggle.com/neha1703/movie-genre-from-its-poster} .
+
+[4] Kaggle, {\it “The movies dataset,” } \url{https://www.kaggle.com/rounakbanik/the-movies-dataset} .
+
+[5] F. B. Moghaddam, M. Elahi, R. Hosseini, C. Trattner, and M. Tkalciˇ c, {\it“Predicting movie popularity and ratings with visual features,” } in 2019 14th International Workshop on Semantic and Social Media Adaptation and Personalization (SMAP). IEEE, 2019, pp. 1–6.
 
 \end{document}
