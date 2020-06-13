@@ -124,13 +124,68 @@ Lightgbm is based on XGBoost and it performs better than XGBoost in many tasks. 
 
 \section{Experiments and Results}
 
+As in [1] we have also used Mean Squared Error (MSE) and $R^2$ as our metrics. MSE is also used for hyperparameter tuning and $R^2$ for getting some information about the performance of models comparing with other models. 
+
+In many of the models we have tested them like in [1] by separating train, validation and test sets. Then found a best model according to the validation set and finally testing it in test set. That models result you can see in Table 2. IN this models the best one is Random Forest. After parameter tuning it achieved 0.44 $R^2$ score which is better than the best score in [1]. 
+
+\begin{table}
+  \caption{Train Validation Test Results}
+  \label{tvt_results-table}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    Method & Test MSE &  Test $R^2$  \\
+    \midrule
+    Linear Regression & 1.3918  & 0.0668   \\
+    Ridge Regression & 0.9824  & 0.3413   \\
+    Decision Tree & 0.9153  & 0.3863   \\
+    Random Forest & 0.8290  & 0.4441   \\
+    XGBoost & 0.8375 & 0.4384 \\
+    SVR & 0.9294 & 0.3768 \\
+        \bottomrule
+  \end{tabular}
+\end{table}
+
+
+Another approach is held using Lightgbm model with Hyperopt hyperparameter tuning algorithms. In this model we have separated just train and test sets 80 and 20 percents correspondingly. And using Hyperopt lightgbm model achieved 0.45 $R^2$ accuracy which is better than previous best model. It is worth to consider that in this case test data is sagnificantly more than in previous case as we have taken 20 percent of the whole dataset. The result is shown in Table 3.
+
+\begin{table}
+  \caption{Lightgbm Result}
+  \label{lgb_results-table}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    Method & Test MSE &  Test $R^2$  \\
+    \midrule
+    Lightgbm & 0.8067  & 0.4513   \\
+        \bottomrule
+  \end{tabular}
+\end{table}
+
+In Table 4 you can see comparison with results of [1]. It can be seen that [1] performed better in the case of LR, Decision Tree, Ridge Regression and SVR. The reason is that we have not done parameter tuning on this models. However in the case of Random Forest our accuracies outperform all their results. 
+
+\begin{table}
+  \caption{Comparison with [1]}
+  \label{cmp_results-table}
+  \centering
+  \begin{tabular}{lllll}
+    \toprule
+    Method & lgb MSE & [1] MSE &  lgb $R^2$  & [1] $R^2$  \\
+    \midrule
+    Linear Regression & 1.3918 & 0.9302  & 0.0668  & 0.3745   \\
+    Ridge Regression & 0.9824 & 0.8775  & 0.3413 & 0.4099  \\
+    Decision Tree & 0.9153  & 0.8959 & 0.3863  & 0.3975 \\
+    Random Forest & 0.8290  & 0.8546 & 0.4441 & 0.4253 \\
+    SVR & 0.9294 & 0.8765 & 0.3768  & 0.4109 \\
+        \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{Discussion}
-askdnvkadsnfvkdafnk
+
 
 \section{Conclusion and Future Work}
 
-dsfavdfvd
 
 
 
