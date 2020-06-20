@@ -9,4 +9,8 @@
 \BOOKMARK [2][-]{subsection.4.5}{Lightgbm}{section.4}% 9
 \BOOKMARK [1][-]{section.5}{Experiments and Results}{}% 10
 \BOOKMARK [1][-]{section.6}{Discussion}{}% 11
-\BOOKMARK [1][-]{section.7}{Conclusion and Future Work}{}% 12
+\BOOKMARK [2][-]{subsection.6.1}{Best Model}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{Hyperparameter tuning}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.3}{Feature Importance}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.4}{Classification}{section.6}% 15
+\BOOKMARK [1][-]{section.7}{Conclusion and Future Work}{}% 16

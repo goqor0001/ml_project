@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.3)  13 JUN 2020 20:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.3)  20 JUN 2020 16:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**nips.tex
-(./nips.tex
+**imdb_score.tex
+(./imdb_score.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -66,6 +66,26 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \@neuripsabovecaptionskip=\skip51
 \@neuripsbelowcaptionskip=\skip52
 )
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks17
@@ -117,7 +137,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen143
+\@linkdim=\dimen145
 \Hy@linkcounter=\count179
 \Hy@pagecounter=\count180
 
@@ -147,7 +167,7 @@ Package hyperref Info: Bookmarks ON on input line 4800.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen144
+\XeTeXLinkMargin=\dimen146
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -157,8 +177,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count183
-\Field@Width=\dimen145
-\Fld@charsize=\dimen146
+\Field@Width=\dimen147
+\Fld@charsize=\dimen148
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -200,23 +220,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip53
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen147
-\lightrulewidth=\dimen148
-\cmidrulewidth=\dimen149
-\belowrulesep=\dimen150
-\belowbottomsep=\dimen151
-\aboverulesep=\dimen152
-\abovetopsep=\dimen153
-\cmidrulesep=\dimen154
-\cmidrulekern=\dimen155
-\defaultaddspace=\dimen156
+\heavyrulewidth=\dimen149
+\lightrulewidth=\dimen150
+\cmidrulewidth=\dimen151
+\belowrulesep=\dimen152
+\belowbottomsep=\dimen153
+\aboverulesep=\dimen154
+\abovetopsep=\dimen155
+\cmidrulesep=\dimen156
+\cmidrulekern=\dimen157
+\defaultaddspace=\dimen158
 \@cmidla=\count189
 \@cmidlb=\count190
-\@aboverulesep=\dimen157
-\@belowrulesep=\dimen158
+\@aboverulesep=\dimen159
+\@belowrulesep=\dimen160
 \@thisruleclass=\count191
 \@lastruleclass=\count192
-\@thisrulewidth=\dimen159
+\@thisrulewidth=\dimen161
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -241,7 +261,7 @@ Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
 \MT@toks=\toks20
 \MT@count=\count193
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen160
+\MT@outer@kern=\dimen162
 LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
 \MT@listname@count=\count194
 
@@ -262,8 +282,12 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count195
 \l__pdf_internal_box=\box45
 )
-(./nips.aux)
-\openout1 = `nips.aux'.
+(./imdb_score.aux
+
+LaTeX Warning: Label `fig:feature_imp' multiply defined.
+
+)
+\openout1 = `imdb_score.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
@@ -348,8 +372,31 @@ LaTeX Font Info:    ... okay on input line 46.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box46
+(/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count196
+\scratchdimen=\dimen163
+\scratchbox=\box46
+\nofMPsegments=\count197
+\nofMParguments=\count198
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count199
+\MPscratchDim=\dimen164
+\MPnumerator=\count266
+\makeMPintoPDFobject=\count267
+\everyMPtoPDFconversion=\toks22
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box47
 Package hyperref Info: Link coloring OFF on input line 46.
+
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -360,14 +407,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count196
+\c@section@level=\count268
 )
 LaTeX Info: Redefining \ref on input line 46.
 LaTeX Info: Redefining \pageref on input line 46.
 LaTeX Info: Redefining \nameref on input line 46.
- (./nips.out) (./nips.out)
+ (./imdb_score.out) (./imdb_score.out)
 \@outlinefile=\write3
-\openout3 = `nips.out'.
+\openout3 = `imdb_score.out'.
 
 LaTeX Info: Redefining \microtypecontext on input line 46.
 Package microtype Info: Generating PDF output.
@@ -434,32 +481,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+<../plots/RandomForest_nestimator.png, id=92, 433.62pt x 289.08pt>
+File: ../plots/RandomForest_nestimator.png Graphic file (type png)
+<use ../plots/RandomForest_nestimator.png>
+Package pdftex.def Info: ../plots/RandomForest_nestimator.png  used on input li
+ne 193.
+(pdftex.def)             Requested size: 190.79338pt x 127.19559pt.
+
+Overfull \hbox (31.80182pt too wide) in paragraph at lines 193--194
+[][] 
+ []
+
+<../plots/RandomForest_maxdepth_tree1.png, id=94, 433.62pt x 289.08pt>
+File: ../plots/RandomForest_maxdepth_tree1.png Graphic file (type png)
+<use ../plots/RandomForest_maxdepth_tree1.png>
+Package pdftex.def Info: ../plots/RandomForest_maxdepth_tree1.png  used on inpu
+t line 198.
+(pdftex.def)             Requested size: 190.79338pt x 127.19559pt.
+
+Overfull \hbox (31.80182pt too wide) in paragraph at lines 198--199
+[][] 
+ []
+
+<../plots/feature_importancvce.png, id=95, 722.7pt x 578.16pt>
+File: ../plots/feature_importancvce.png Graphic file (type png)
+<use ../plots/feature_importancvce.png>
+Package pdftex.def Info: ../plots/feature_importancvce.png  used on input line 
+209.
+(pdftex.def)             Requested size: 325.20096pt x 260.16077pt.
+[4 <../plots/RandomForest_nestimator.png> <../plots/RandomForest_maxdepth_tree1
+.png> <../plots/feature_importancvce.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
 []\T1/ptm/m/n/9 (+20) [3] Kag-gleInc, \T1/ptm/m/it/9 (+20) ^^PMovie genre from 
 its poster,^^Q []$\T1/cmtt/m/n/9 https : / / www . kaggle . com / neha1703 /
  []
 
 LaTeX Info: Symbol \textasciicaron not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 207.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
- (./nips.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
-Package rerunfilecheck Info: File `nips.out' has not changed.
-(rerunfilecheck)             Checksum: B50DAB4873425715F328A29E1C804516;690.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
+            Default family used instead on input line 261.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
+ (./imdb_score.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
+Package rerunfilecheck Info: File `imdb_score.out' has not changed.
+(rerunfilecheck)             Checksum: E9C3A5EB5A6CC3C88274605C146529E4;953.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
  ) 
 Here is how much of TeX's memory you used:
- 7481 strings out of 480608
- 118603 string characters out of 5903631
- 415192 words of memory out of 5000000
- 23105 multiletter control sequences out of 15000+600000
- 564323 words of font info for 138 fonts, out of 8000000 for 9000
+ 8276 strings out of 480608
+ 130117 string characters out of 5903631
+ 427714 words of memory out of 5000000
+ 23850 multiletter control sequences out of 15000+600000
+ 564583 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,42p,799b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,42p,805b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{
 /usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texl
@@ -473,10 +554,10 @@ mf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2020/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on nips.pdf (4 pages, 143296 bytes).
+Output written on imdb_score.pdf (5 pages, 184870 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 21089 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 21136 words of extra memory for PDF output out of 24883 (max. 10000000)
 

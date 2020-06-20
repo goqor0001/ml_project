@@ -16,7 +16,7 @@
 
 % to avoid loading the natbib package, add option nonatbib:
 %     \usepackage[nonatbib]{neurips_2018}
-
+\usepackage{graphicx}
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{hyperref}       % hyperlinks
@@ -182,6 +182,60 @@ In Table 4 you can see comparison with results of [1]. It can be seen that [1] p
 \end{table}
 
 \section{Discussion}
+
+\subsection{Best Model}
+
+The model which outperforms all the others is lightgbm. It achieves 0.45 $R^2$ accuracy in the case of more test dataset than others.  Lightgbm speeds up the traning process a few times and so it is possible to tune parameters more easily. This is one of the reasons that it achieved better accuracy than other models. 
+
+\begin{figure}
+	\centering
+	\begin{minipage}[b]{0.4\textwidth}
+	\includegraphics[width=1.2\linewidth, height=0.4\textheight, keepaspectratio]{../plots/RandomForest_nestimator.png}
+	\caption{grid search on number of estimators}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.4\textwidth}
+	\includegraphics[width=1.2\linewidth, height=0.4\textheight, keepaspectratio]{../plots/RandomForest_maxdepth_tree1.png}
+	\caption{grid search on max depth of tree}
+	\end{minipage}
+	
+	\label{fig:feature_imp}
+\end{figure}
+
+Another successful model is Random Forest which achieved 0.44 $R^2$ score. This model is compatible with Lightgbm with its accuracy. Other models performed well but did not achieved higher accuracy. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth, height=0.4\textheight, keepaspectratio]{../plots/feature_importancvce.png}
+	\caption{Feature importance}
+	\label{fig:feature_imp}
+\end{figure}
+
+\subsection{Hyperparameter tuning}
+In the field of Machine Learning one of the things which helps to achieve higher accuracy is hyperparameter tuning. There are a lot of techniques  for this: grid search, hyperopt, random search, gradient-based optimization and etc.. In the case of Lightgbm we have chosen hyperopt and it achieved best score. In Random Forest we have chosen type of grid search, as it trains not very quickly and also its performance is good. In Figure 1 we can see the result of accuracy when searching a best number of estimators in trees and we can see that starting from the 16 it is not improve so much. Moreover, in Figure 2 we can see the search result of max depth of trees and in this case also it is enough to have 32 max depth. 
+
+\subsection{Feature Importance}
+It is important question that which parameters affected the most on the prediction of IMDB score. For that we have taken the most important features from Random Forest Regressor and in Figure 3 we can see that runtime affects greatly. The reason could be that people do not like very long or very short movies. Another important feature is documentary genre which is agreeable, as people fun of watching movies which are more realistic. 
+
+\subsection{Classification}
+We have also tried to discretized IMDB scores and try to classify movies by their score. As in [1] we have chosen 5, 10  and 20 classes. In Table 5 we can see the comparison of classification and regression. It is clear from the table that classification MSE is bigger than regression MSE and it is logical. 
+
+\begin{table}
+  \caption{Classification vs Regression}
+  \label{cls_vs_reg}
+  \centering
+  \begin{tabular}{lllll}
+    \toprule
+    Method & cls MSE & reg MSE   \\
+    \midrule
+    Ridge Regression (10 cls) & 1.34 & 0.98    \\
+    Decision Tree (10 cls) & 1.04 & 0.91 \\
+    Random Forest & 0.83 & 0.82 \\
+    XGBoost (10 cls) & 1.14 & 0.83 \\
+    SVR & 0.9294 & 1.31 &  0.92 \\
+        \bottomrule
+  \end{tabular}
+\end{table}
 
 
 
