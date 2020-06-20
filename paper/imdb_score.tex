@@ -122,6 +122,9 @@ Support Vector Machine is widely used ML algorithm which performs well in many p
 
 Lightgbm is based on XGBoost and it performs better than XGBoost in many tasks. It also very fast algorithm. We have used this model and after fine tuning it produces the best result. It outperforms to the results in [1] sagnificantly. 
 
+\subsection{Classification}
+We have also tried classification for IMDB score prediction. The score is discretized by 5, 10 and 20 classes and same models beside Lightgbm we have tried for classification problem. As we will see in the next section, for any model classification test MSE is larger than regression test MSE.
+
 \section{Experiments and Results}
 
 As in [1] we have also used Mean Squared Error (MSE) and $R^2$ as our metrics. MSE is also used for hyperparameter tuning and $R^2$ for getting some information about the performance of models comparing with other models. 
@@ -218,7 +221,7 @@ In the field of Machine Learning one of the things which helps to achieve higher
 It is important question that which parameters affected the most on the prediction of IMDB score. For that we have taken the most important features from Random Forest Regressor and in Figure 3 we can see that runtime affects greatly. The reason could be that people do not like very long or very short movies. Another important feature is documentary genre which is agreeable, as people fun of watching movies which are more realistic. 
 
 \subsection{Classification}
-We have also tried to discretized IMDB scores and try to classify movies by their score. As in [1] we have chosen 5, 10  and 20 classes. In Table 5 we can see the comparison of classification and regression. It is clear from the table that classification MSE is bigger than regression MSE and it is logical. 
+We have also tried to discretized IMDB scores and try to classify movies by their scores. As in [1] we have chosen 5, 10  and 20 classes. In Table 5 we can see the comparison of classification and regression. It is clear from the table that classification MSE is bigger than regression MSE. So, for this problem it is not classification is not working well and regression gives the best score in the sense of MSE. 
 
 \begin{table}
   \caption{Classification vs Regression}
@@ -226,13 +229,13 @@ We have also tried to discretized IMDB scores and try to classify movies by thei
   \centering
   \begin{tabular}{lllll}
     \toprule
-    Method & cls MSE & reg MSE   \\
+    Method & cls 5 MSE & cls 10 MSE & cls 20 MSE & reg MSE   \\
     \midrule
-    Ridge Regression (10 cls) & 1.34 & 0.98    \\
-    Decision Tree (10 cls) & 1.04 & 0.91 \\
-    Random Forest & 0.83 & 0.82 \\
-    XGBoost (10 cls) & 1.14 & 0.83 \\
-    SVR & 0.9294 & 1.31 &  0.92 \\
+    Ridge Regression  & 1.70 & 1.34  & 1.25 & 0.98    \\
+    Decision Tree & 1.52 & 1.04 & 1.03 & 0.91 \\
+    Random Forest & 0.84 & 0.83  & 0.83 & 0.82 \\
+    XGBoost   &1.50 & 1.14  & 1.09 & 0.83 \\
+    SVR  & 1.63 & 1.31 & 1.29 & 0.92 \\
         \bottomrule
   \end{tabular}
 \end{table}
