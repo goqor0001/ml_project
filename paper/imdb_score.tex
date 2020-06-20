@@ -1,21 +1,7 @@
 \documentclass{article}
 
-% if you need to pass options to natbib, use, e.g.:
-%     \PassOptionsToPackage{numbers, compress}{natbib}
-% before loading neurips_2018
+\usepackage[final]{nips}
 
-% ready for submission
-% \usepackage{neurips_2018}
-
-% to compile a preprint version, e.g., for submission to arXiv, add add the
-% [preprint] option:
-%     \usepackage[preprint]{neurips_2018}
-
-% to compile a camera-ready version, add the [final] option, e.g.:
-     \usepackage[final]{nips}
-
-% to avoid loading the natbib package, add option nonatbib:
-%     \usepackage[nonatbib]{neurips_2018}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
@@ -28,14 +14,6 @@
 
 \title{Movie Rating Prediction Using Machine Learning}
 
-% The \author macro works with any number of authors. There are two commands
-% used to separate the names and addresses of multiple authors: \And and \AND.
-%
-% Using \And between authors leaves it to LaTeX to determine where to break the
-% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
-% authors names on the first line, and the last on the second line, try using
-% \AND instead of \And before the third author name.
-
 \author{%
   Grigor ~Keropyan\thanks{https://github.com/grigor97} \\
   Department of Mathematics and Mechanics\\
@@ -43,8 +21,8 @@
   \texttt{goqorkeropyan@gmail.com} \\
 }
 
+
 \begin{document}
-% \nipsfinalcopy is no longer used
 
 \maketitle
 
@@ -63,12 +41,12 @@ One of the goals of this work is provide a tool which can help producers to prom
 \section{Related Work}
 \label{rel_work}
 
-This work is based on the Stanford students paper [1] where they predict IMDB score of movies. In [1] authors used ML based methods to predict IMDB score. Another research which uses Bayesian approach [2]. This paper is based on [1] and uses new ML algorithms such as lightgbm to reach the better accuracy than [1]. Our preproccessing is almost the same as [1] and we have about 20K examples. We have shuffled the dataset and splited into training and test test correspondingly 80 and 20 precents. In the algorithm we have done K-Folds cross validation and after tuning the hyperparamters we have achieved better accuracy than [1]. 
+This work is based on the Stanford students paper [1] where Yang et al. predicted IMDB score of movies. Yang et al. used ML based methods to predict IMDB score. Another research which uses Bayesian approach [2]. This paper is based on [1] and uses new ML algorithms such as Lightgbm to reach the better accuracy than Stanford paper. Our preprocessing is almost the same as Yang et al.'s and we have about 20K examples. We have shuffled the dataset and splitted into training and test correspondingly 80 and 20 percents. In the algorithm we have done K-Folds cross validation and after tuning the hyperparameters we have achieved better accuracy than in Stanford  students paper. 
 
 \section{Dataset and Features}
 \label{headings}
 
-We have used open source data, "Movie Genre from its Poster Dataset" [3] and "The Movie Dataset" [4]. The dataset is preprocessed like [1], taking only movies which original language is english and which produced after 1980. The features are divided into 3 groups: text (synopses), images (posters) and others (runtime, genre, director, actors). From poster we have extracted some features: such as number of peoples in the poster, mean and standard deviation of blue, green, red, hue, saturation, brightness as in [5]. For summaries we have used count vectorizers and only left the word which appeared more than 20 times. Directors are have been made one hot and actors count vectorizers where we have only left top three actors in each movie. The example of result is shown in Table 1. 
+We have used open source data, "Movie Genre from its Poster Dataset" [3] and "The Movie Dataset" [4]. The dataset is preprocessed like Yang et al., taking only movies which original language is english and which produced after 1980. The features are divided into 3 groups: text (synopses), images (posters) and others (runtime, genre, director, actors). From poster we have extracted some features using OpenCV: such as number of peoples in the poster, mean and standard deviation of blue, green, red, hue, saturation, brightness as in [5]. For summaries we have used count vectorizers and only left the word which appeared more than 20 times. Directors have been made one hot encoding and actors count vectorizers where we have only left top three actors in each movie. The example of result is shown in Table 1. 
 
 \begin{table}
   \caption{Dataset by Groups}
@@ -87,7 +65,8 @@ We have used open source data, "Movie Genre from its Poster Dataset" [3] and "Th
     \bottomrule
   \end{tabular}
 \end{table}
-After filtering the english movies and released after 1980 it remained 18850 movies. Which we have splited in two ways. First: like [1] implementation, when it is separated train, validation and test sets correspondingly 70, 15, 15 percents. Second: which gave a better result it is separated into train and test sets correspondingly 80 and 20 percents. 
+
+After filtering the english movies and released after 1980 it remained 18850 movies. Which we have splitted in two ways. First: like Yang et al.'s implementation, when it is separated train, validation and test sets correspondingly 70, 15, 15 percents. Second: which gave a better result it is separated into train and test sets correspondingly 80 and 20 percents. 
 
 \section{Methods}
 \label{methods}
@@ -209,7 +188,7 @@ Another successful model is Random Forest which achieved 0.44 $R^2$ score. This 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth, height=0.4\textheight, keepaspectratio]{../plots/feature_importancvce.png}
+	\includegraphics[width=1\linewidth, height=0.2\textheight, keepaspectratio]{../plots/feature_importancvce.png}
 	\caption{Feature importance}
 	\label{fig:feature_imp}
 \end{figure}
@@ -220,8 +199,14 @@ In the field of Machine Learning one of the things which helps to achieve higher
 \subsection{Feature Importance}
 It is important question that which parameters affected the most on the prediction of IMDB score. For that we have taken the most important features from Random Forest Regressor and in Figure 3 we can see that runtime affects greatly. The reason could be that people do not like very long or very short movies. Another important feature is documentary genre which is agreeable, as people fun of watching movies which are more realistic. 
 
+
 \subsection{Classification}
+
 We have also tried to discretized IMDB scores and try to classify movies by their scores. As in [1] we have chosen 5, 10  and 20 classes. In Table 5 we can see the comparison of classification and regression. It is clear from the table that classification MSE is bigger than regression MSE. So, for this problem it is not classification is not working well and regression gives the best score in the sense of MSE. 
+
+\section{Conclusion and Future Work}
+
+In this paper we have show some model's performance by predicting IMDB movie rating based on the information available before theatrical release. It is evident that using only that information we cannot get higher accuracy as a lot of information is missing. However, ML methods performed well on this case and the best models error is 0.8 on the test is which is very better than any other existing approaches. 
 
 \begin{table}
   \caption{Classification vs Regression}
@@ -239,12 +224,6 @@ We have also tried to discretized IMDB scores and try to classify movies by thei
         \bottomrule
   \end{tabular}
 \end{table}
-
-
-
-\section{Conclusion and Future Work}
-
-In this paper we have show some model's performance by predicting IMDB movie rating based on the information available before theatrical release. It is evident that using only that information we cannot get higher accuracy as a lot of information is missing. However, ML methods performed well on this case and the best models error is 0.8 on the test is which is very better than any other existing approaches. 
 
 \section*{References}
 \label{reference}
