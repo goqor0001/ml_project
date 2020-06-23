@@ -1,5 +1,5 @@
 # ml_project
-IMDB score prediction based on the data before theatrical release.
+IMDB score prediction based on the data known before theatrical release.
 
 paper link:
 https://github.com/grigor97/IMDB_score_prediction/blob/master/paper/imdb_score.pdf
