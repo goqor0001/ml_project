@@ -6,3 +6,6 @@ https://github.com/grigor97/IMDB_score_prediction/blob/master/paper/imdb_score.p
 
 poster link:
 https://github.com/grigor97/IMDB_score_prediction/blob/master/poster/main.pdf
+
+visualization slides:
+https://github.com/grigor97/IMDB_score_prediction/blob/master/visualization/slides/slides.pdf
